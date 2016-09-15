@@ -14,30 +14,25 @@ namespace SpawnAreaWebCore.Controllers
         {
             try
             {
-                return View(new MediaFile() { VideoId = "", SourceUrl = new Uri("https://www.youtube.com/") });
+                return View();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                return View("Error",e);
             }
         }
 
         [HttpPost]
-        public IActionResult LoadPlayer(string videoid, Uri sourceurl)
+        public IActionResult LoadPlayer()
         {
             try
-            {
-                if (ModelState.IsValid)
-                {
-                    return View("MediaPlayer", new MediaFile() { VideoId = videoid, SourceUrl = sourceurl });
-                }
-                return View("Index");
+            {               
+                return View("MediaPlayer");
+                
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
-                throw;
+                return View("Error", e);
             }
         }
     }

@@ -1,18 +1,15 @@
-﻿@model SpawnAreaWebCore.Models.MediaFile
+﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Media";
 }
 
 <h2>Media</h2>
 
-<p>This is a demo tool to make an offline copy of online media using a source url.</p>
+<p>
+    Show the demo of a HTML5 3th party media player.
+</p>
 
 <form asp-controller="Media" asp-action="LoadPlayer" method="post">
-    @*<div class="form-group">
-        <label for="VideoId">YouTube Video ID (optional):</label>
-        <input class="form-control" asp-for="VideoId" name="VideoId" />
-        <label for="SourceUrl">Source Url:</label>
-        <input class="form-control" asp-for="SourceUrl" name="SourceUrl" />
-    </div>*@
-    <button class="btn btn-success">Demo Player</button>
+
+    <button class="btn btn-success">Load player demo</button>
 </form>
